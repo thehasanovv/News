@@ -1,0 +1,26 @@
+const MainCategories = ({ categories, setCategory }) => {
+  const chaneCategoryHandler = (category) => {
+    setCategory(category);
+  };
+
+  return (
+    <div className="flex items-center flex-col justify-center h-full ">
+      <h1 className="font-bold text-[50px] text-center text-white mb-4 -mt-10">
+        News
+      </h1>
+      <div className="flex items-center justify-center gap-2">
+        {categories.map((data) => (
+          <button
+            onClick={chaneCategoryHandler.bind(null, data.category)}
+            key={data.id}
+            className="bg-white font-bold p-3 text-center min-w-[92px] rounded-[10px] cursor-pointer hover:bg-slate-200"
+          >
+            {data.category.charAt(0).toUpperCase() + data.category.slice(1)}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MainCategories;
