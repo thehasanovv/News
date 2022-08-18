@@ -13,11 +13,14 @@ const Main = () => {
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
-
-      const result = await axios.get(
-        `https://inshorts.deta.dev/news?category=${category}`
-      );
-      setNews(result.data);
+      try {
+        const result = await axios.get(
+          `https://inshorts.deta.dev/news?category=${category}`
+        );
+        setNews(result.data);
+      } catch (err) {
+        console.log(err);
+      }
       setLoading(false);
     };
     getData();
