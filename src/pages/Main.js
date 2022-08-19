@@ -7,7 +7,7 @@ const Main = () => {
   const { isLoading } = useSelector((state) => state.news);
 
   return (
-    <div className="relative bg-slate-100">
+    <div className="relative bg-slate-100 font-sans">
       <MainCategories />
       {isLoading ? <SpinnerLoading /> : <MainCards />}
     </div>

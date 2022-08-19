@@ -17,7 +17,7 @@ const SelectedPage = () => {
   }, []);
 
   return (
-    <div className="relative bg-slate-100">
+    <div className="relative bg-slate-100 font-sans">
       <MainCategories />
       <div className="max-w-5xl w-full m-auto -translate-y-8 pb-10 px-10">
         <div className="p-2 bg-white rounded-[10px] flex align-center justify-between gap-5">
