@@ -11,7 +11,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(2);
     dispatch(fetchAllNews("all"));
   }, []);
 
