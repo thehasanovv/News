@@ -10,6 +10,9 @@ const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
+    replaceNews(state, action) {
+      state.news = action.payload;
+    },
     setLoading(state, action) {
       state.isLoading = action.payload;
     },
@@ -22,5 +25,6 @@ const newsSlice = createSlice({
   },
 });
 
-export const { getAllNews, getSelectedNews, setLoading } = newsSlice.actions;
+export const { getAllNews, getSelectedNews, setLoading, replaceNews } =
+  newsSlice.actions;
 export default newsSlice.reducer;

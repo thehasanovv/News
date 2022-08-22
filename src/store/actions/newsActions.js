@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAllNews, getSelectedNews, setLoading } from "../slices/newsSlice";
+import { getAllNews, setLoading } from "../slices/newsSlice";
 
 export const fetchAllNews = (category) => async (dispatch) => {
   try {

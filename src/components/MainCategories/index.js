@@ -1,7 +1,7 @@
 import { categories } from "../../data-dev/Categories";
 import { useDispatch } from "react-redux";
 import { fetchAllNews } from "../../store/actions/newsActions";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MainCategories = () => {
   const dispatch = useDispatch();
@@ -18,14 +18,18 @@ const MainCategories = () => {
         </h1>
         <div className="flex items-center justify-center gap-2">
           {categories.map((data) => (
-            <Link
+            <NavLink
               to={`/${data.category}`}
               onClick={chaneCategoryHandler.bind(null, data.category)}
               key={data.id}
-              className="bg-white font-bold p-3 text-center min-w-[92px] rounded-[10px] cursor-pointer hover:bg-slate-200"
+              className={`font-bold p-3 text-center min-w-[92px] rounded-[10px] cursor-pointer hover:bg-slate-200`}
+              style={({ isActive }) => ({
+                backgroundColor: isActive ? "#232d45" : "white",
+                color: isActive ? "white" : "black",
+              })}
             >
               {data.category.charAt(0).toUpperCase() + data.category.slice(1)}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>

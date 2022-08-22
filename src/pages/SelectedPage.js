@@ -25,16 +25,17 @@ const SelectedPage = () => {
             <div className="h-60">
               <img
                 src={selected.imageUrl}
+                alt={"selected img"}
                 className="rounded-[10px] w-full h-full object-cover"
               />
             </div>
             <div className="flex items-center gap-4 px-2 py-4">
               <div className="flex items-center gap-1">
-                <img src="/images/icon-clock.svg" />
+                <img src="/images/icon-clock.svg" alt={"selected img"} />
                 <span className="">{selected.date.split(",")[0]}</span>
               </div>
               <div className="flex items-center gap-1">
-                <img src="/images/icon-user.svg" />
+                <img src="/images/icon-user.svg" alt={"selected img"} />
                 <span className="">{selected.author}</span>
               </div>
             </div>

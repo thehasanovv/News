@@ -12,7 +12,9 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchAllNews("all"));
-  }, []);
+    const saved = JSON.parse(localStorage.getItem("news"));
+    dispatch(fetchAllNews(saved));
+  }, [dispatch]);
 
   return (
     <div className="App">
