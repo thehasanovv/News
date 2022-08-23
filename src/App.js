@@ -6,14 +6,19 @@ import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchAllNews } from "./store/actions/newsActions";
 import { useDispatch } from "react-redux";
+import { replaceNews } from "./store/slices/newsSlice";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllNews("all"));
     const saved = JSON.parse(localStorage.getItem("news"));
-    dispatch(fetchAllNews(saved));
+    console.log(saved);
+    if (saved === null) {
+      dispatch(fetchAllNews("all"));
+    } else {
+      dispatch(replaceNews(saved));
+    }
   }, [dispatch]);
 
   return (

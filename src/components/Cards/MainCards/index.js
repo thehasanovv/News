@@ -48,11 +48,11 @@ const MainCards = () => {
             {/* Cart footer */}
             <div className="flex items-center gap-4 px-2 py-4">
               <div className="flex items-center gap-1">
-                <img src="/images/icon-clock.svg" alt="time icon"/>
+                <img src="/images/icon-clock.svg" alt="time icon" />
                 <span className="">{data.date.split(",")[0]}</span>
               </div>
               <div className="flex items-center gap-1">
-                <img src="/images/icon-user.svg" alt="user icon"/>
+                <img src="/images/icon-user.svg" alt="user icon" />
                 <span className="">{data.author}</span>
               </div>
             </div>
