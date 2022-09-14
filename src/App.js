@@ -13,7 +13,6 @@ function App() {
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("news"));
-    console.log(saved);
     if (saved === null) {
       dispatch(fetchAllNews("all"));
     } else {
